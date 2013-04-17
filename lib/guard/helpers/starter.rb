@@ -110,6 +110,9 @@ module ::Guard::Helpers::Starter
   
   # Run `act_on` on each file that is watched
   def run_on_changes(paths)
+    if options[:all_on_change]
+      paths = Watcher.match_files(self, Dir.glob('**{,/*/**}/*').uniq.compact)
+    end
     paths = paths.select {|path| not options[:exclude] =~ path and File.file? path}
 
     directories = detect_nested_directories(watchers, paths, options)
