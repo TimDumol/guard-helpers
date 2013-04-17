@@ -1,7 +1,7 @@
 require 'rake'
 Gem::Specification.new do |s|
   s.name        = 'guard-helpers'
-  s.version     = '0.0.2'
+  s.version     = '0.0.3'
   s.date        = '2013-04-17'
   s.summary     = "Helper modules to make making Guard plugins easier"
   s.description = "Helper modules to make making Guard plugins easier "
