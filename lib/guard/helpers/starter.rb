@@ -126,10 +126,8 @@ module ::Guard
           files.each do |file|
             begin
               act_on(directory, file)
-              puts 'Wrote!'
               written << file
             rescue Exception => e
-              puts 'Error!'
               error(e.message, file)
               throw :task_has_failed
             end
